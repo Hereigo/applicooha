@@ -20,18 +20,14 @@ namespace Applicooha
             services.AddControllersWithViews();
         }
 
-        // To configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
-            {
                 app.UseDeveloperExceptionPage();
-            }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                app.UseHsts(); // see https://aka.ms/aspnetcore-hsts.
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
